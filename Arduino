@@ -1,0 +1,341 @@
+const int led34 = 13;   // the pin that the LED is attached to
+const int led345 = 12; 
+const int led35 = 11;
+const int led355 = 10;
+const int led36 = 9;
+const int led365 = 8;
+const int led37 = 7;
+const int led375 = 6;
+const int led38 = 5;
+const int led385 = 4;
+const int led39 = 3;
+const int led395 = 22;
+const int led40 = 23;
+const int led405 = 24;
+const int led41 = 25;
+const int led415 = 26;
+const int led42 = 27;
+const int led425 = 28;
+const int led43 = 29;
+const int led435 = 30;
+const int led44 = 31;
+const int led445 = 32;
+const int led45 = 33;
+const int led455 = 34;
+const int led46 = 35;
+const int led465 = 36;
+const int led47 = 37;
+const int led475 = 38;
+const int led48 = 39;
+const int led485 = 40;
+const int led49 = 41;
+const int led495 = 42;
+
+
+int incomingByte;      // a variable to read incoming serial data into
+
+void setup() {
+  // initialize serial communication:
+  Serial.begin(9600);
+  // initialize the LED pin as an output:
+  pinMode(led34, OUTPUT); 
+  pinMode(led345, OUTPUT);
+  pinMode(led35, OUTPUT);
+  pinMode(led355, OUTPUT);
+  pinMode(led36, OUTPUT);
+  pinMode(led365, OUTPUT);
+  pinMode(led37, OUTPUT);
+  pinMode(led375, OUTPUT);
+  pinMode(led38, OUTPUT);
+  pinMode(led385, OUTPUT);
+  pinMode(led39, OUTPUT);
+  pinMode(led395, OUTPUT);
+  pinMode(led40, OUTPUT);
+  pinMode(led405, OUTPUT);
+  pinMode(led41, OUTPUT);
+  pinMode(led415, OUTPUT);
+  pinMode(led42, OUTPUT);
+  pinMode(led425, OUTPUT);
+  pinMode(led43, OUTPUT);
+  pinMode(led435, OUTPUT);
+  pinMode(led44, OUTPUT);
+  pinMode(led445, OUTPUT);
+  pinMode(led45, OUTPUT);
+  pinMode(led455, OUTPUT);
+  pinMode(led46, OUTPUT);
+  pinMode(led465, OUTPUT);
+  pinMode(led47, OUTPUT);
+  pinMode(led475, OUTPUT);
+  pinMode(led48, OUTPUT);
+  pinMode(led485, OUTPUT);
+  pinMode(led49, OUTPUT);
+  pinMode(led495, OUTPUT);
+}
+
+void loop() {
+  // see if there's incoming serial data:
+  if (Serial.available() > 0) {
+    // read the oldest byte in the serial buffer:
+    incomingByte = Serial.read();
+    
+    //34
+    if (incomingByte == 'A') {
+      digitalWrite(led34, HIGH);
+    }
+    if (incomingByte == 'a') {
+      digitalWrite(led34, LOW);
+    }
+
+    //34.5
+    if (incomingByte == 'B') {
+      digitalWrite(led345, HIGH);
+    }
+    if (incomingByte == 'b') {
+      digitalWrite(led345, LOW);
+    }
+    
+    //35
+    if (incomingByte == 'C') {
+      digitalWrite(led35, HIGH);
+    }
+    if (incomingByte == 'c') {
+      digitalWrite(led35, LOW);
+    }
+
+    //35.5
+    if (incomingByte == 'D') {
+      digitalWrite(led355, HIGH);
+    }
+    if (incomingByte == 'd') {
+      digitalWrite(led355, LOW);
+    }
+    
+    //36
+    if (incomingByte == 'E') {
+      digitalWrite(led36, HIGH);
+    }
+    if (incomingByte == 'e') {
+      digitalWrite(led36, LOW);
+    }
+
+    //36.5
+    if (incomingByte == 'F') {
+      digitalWrite(led365, HIGH);
+    }
+    if (incomingByte == 'f') {
+      digitalWrite(led365, LOW);
+    }
+    
+    //37
+    if (incomingByte == 'G') {
+      digitalWrite(led37, HIGH);
+    }
+    
+    if (incomingByte == 'g') {
+      digitalWrite(led37, LOW);
+    }
+
+
+    //37.5
+    if (incomingByte == 'H') {
+      digitalWrite(led375, HIGH);
+    }
+    if (incomingByte == 'h') {
+      digitalWrite(led375, LOW);
+    }
+    
+    //38
+    if (incomingByte == 'I') {
+      digitalWrite(led38, HIGH);
+    }
+    if (incomingByte == 'i') {
+      digitalWrite(led38, LOW);
+    }
+
+    
+    //38.5
+    if (incomingByte == 'J') {
+      digitalWrite(led385, HIGH);
+    }
+    
+    if (incomingByte == 'j') {
+      digitalWrite(led385, LOW);
+    }
+
+    //39
+    if (incomingByte == 'K') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'k') {
+      digitalWrite(led39, LOW);
+    }
+
+     //39.5
+    if (incomingByte == 'L') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'l') {
+      digitalWrite(led39, LOW);
+    }
+
+     //40
+    if (incomingByte == 'M') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'm') {
+      digitalWrite(led39, LOW);
+    }
+
+     //40.5
+    if (incomingByte == 'N') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'n') {
+      digitalWrite(led39, LOW);
+    }
+
+     //41
+    if (incomingByte == 'O') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'o') {
+      digitalWrite(led39, LOW);
+    }
+
+     //41.5
+    if (incomingByte == 'P') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'p') {
+      digitalWrite(led39, LOW);
+    }
+
+     //42
+    if (incomingByte == 'Q') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'q') {
+      digitalWrite(led39, LOW);
+    }
+
+     //42.5
+    if (incomingByte == 'R') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'r') {
+      digitalWrite(led39, LOW);
+    }
+
+     //43
+    if (incomingByte == 'S') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 's') {
+      digitalWrite(led39, LOW);
+    }
+
+     //43.5
+    if (incomingByte == 'T') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 't') {
+      digitalWrite(led39, LOW);
+    }
+
+     //44
+    if (incomingByte == 'U') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'u') {
+      digitalWrite(led39, LOW);
+    }
+
+     //44.5
+    if (incomingByte == 'V') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'v') {
+      digitalWrite(led39, LOW);
+    }
+
+      //45
+    if (incomingByte == 'W') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'w') {
+      digitalWrite(led39, LOW);
+    }
+
+     //45.5
+    if (incomingByte == 'X') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'x') {
+      digitalWrite(led39, LOW);
+    }
+
+     //46
+    if (incomingByte == 'Y') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'y') {
+      digitalWrite(led39, LOW);
+    }
+
+     //46.5
+    if (incomingByte == 'Z') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == 'z') {
+      digitalWrite(led39, LOW);
+    }
+
+     //47
+    if (incomingByte == '1') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == '2') {
+      digitalWrite(led39, LOW);
+    }
+
+     //47.5
+    if (incomingByte == '3') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == '4') {
+      digitalWrite(led39, LOW);
+    }
+
+     //48
+    if (incomingByte == '5') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == '6') {
+      digitalWrite(led39, LOW);
+    }
+
+     //48.5
+    if (incomingByte == '7') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == '8') {
+      digitalWrite(led39, LOW);
+    }
+
+     //49
+    if (incomingByte == '9') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == '0') {
+      digitalWrite(led39, LOW);
+    }
+
+     //49.5
+    if (incomingByte == '$') {
+      digitalWrite(led39, HIGH);
+    }
+    if (incomingByte == '&') {
+      digitalWrite(led39, LOW);
+    }
+  }
+}
