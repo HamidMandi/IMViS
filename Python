@@ -1,0 +1,1098 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'CellController.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.2
+#
+# WARNING! All changes made in this file will be lost!
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+import serial, time
+ser=serial.Serial('COM3', 9600)
+
+class Ui_CellController(object):
+    def setupUi(self, CellController):
+        CellController.setObjectName("CellController")
+        CellController.setEnabled(True)
+        CellController.resize(800, 520)
+        CellController.setMinimumSize(QtCore.QSize(800, 520))
+        CellController.setMaximumSize(QtCore.QSize(800, 520))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(170, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Light, brush)
+        brush = QtGui.QBrush(QtGui.QColor(212, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Midlight, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 127, 127))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Dark, brush)
+        brush = QtGui.QBrush(QtGui.QColor(113, 170, 170))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Mid, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.BrightText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(170, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Shadow, brush)
+        brush = QtGui.QBrush(QtGui.QColor(212, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.AlternateBase, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 220))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ToolTipBase, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ToolTipText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(170, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Light, brush)
+        brush = QtGui.QBrush(QtGui.QColor(212, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Midlight, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 127, 127))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Dark, brush)
+        brush = QtGui.QBrush(QtGui.QColor(113, 170, 170))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Mid, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.BrightText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(170, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Shadow, brush)
+        brush = QtGui.QBrush(QtGui.QColor(212, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.AlternateBase, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 220))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ToolTipBase, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ToolTipText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 127, 127))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(170, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Light, brush)
+        brush = QtGui.QBrush(QtGui.QColor(212, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Midlight, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 127, 127))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Dark, brush)
+        brush = QtGui.QBrush(QtGui.QColor(113, 170, 170))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Mid, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 127, 127))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.BrightText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 127, 127))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(170, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(170, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Shadow, brush)
+        brush = QtGui.QBrush(QtGui.QColor(170, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.AlternateBase, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 220))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipBase, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipText, brush)
+        CellController.setPalette(palette)
+
+
+        #Tab View
+        self.tableView = QtWidgets.QTableView(CellController)
+        self.tableView.setGeometry(QtCore.QRect(20, 9, 760, 420))
+        self.tableView.setMinimumSize(QtCore.QSize(760, 420))
+        self.tableView.setMaximumSize(QtCore.QSize(760, 420))
+        self.tableView.setLocale(QtCore.QLocale(QtCore.QLocale.English, QtCore.QLocale.UnitedStates))
+        self.tableView.setObjectName("tableView")
+
+        #34
+        self.pushButton_340 = QtWidgets.QPushButton(CellController)
+        self.pushButton_340.setGeometry(QtCore.QRect(50, 330, 80, 80))
+        self.pushButton_340.setMinimumSize(QtCore.QSize(80, 80))
+        self.pushButton_340.setMaximumSize(QtCore.QSize(80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_340.setFont(font)
+        self.pushButton_340.setCheckable(True)
+        self.pushButton_340.toggle()
+        self.pushButton_340.setChecked(True)
+        self.pushButton_340.setObjectName("pushButton_340")
+
+
+        #34.5
+        self.pushButton_345 = QtWidgets.QPushButton(CellController)
+        self.pushButton_345.setGeometry(QtCore.QRect(140, 330, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_345.setFont(font)
+        self.pushButton_345.setCheckable(True)
+        self.pushButton_345.toggle()
+        self.pushButton_345.setChecked(True)
+        self.pushButton_345.setObjectName("pushButton_345")
+
+        #35
+        self.pushButton_350 = QtWidgets.QPushButton(CellController)
+        self.pushButton_350.setGeometry(QtCore.QRect(230, 330, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_350.setFont(font)
+        self.pushButton_350.setCheckable(True)
+        self.pushButton_350.toggle()
+        self.pushButton_350.setChecked(True)
+        self.pushButton_350.setObjectName("pushButton_350")
+
+        #35.5
+        self.pushButton_355 = QtWidgets.QPushButton(CellController)
+        self.pushButton_355.setGeometry(QtCore.QRect(320, 330, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_355.setFont(font)
+        self.pushButton_355.setCheckable(True)
+        self.pushButton_355.toggle()
+        self.pushButton_355.setChecked(True)
+        self.pushButton_355.setObjectName("pushButton_355")
+
+        #36
+        self.pushButton_360 = QtWidgets.QPushButton(CellController)
+        self.pushButton_360.setGeometry(QtCore.QRect(410, 330, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_360.setFont(font)
+        self.pushButton_360.setCheckable(True)
+        self.pushButton_360.toggle()
+        self.pushButton_360.setChecked(True)
+        self.pushButton_360.setObjectName("pushButton_360")
+
+
+        #36.5
+        self.pushButton_365 = QtWidgets.QPushButton(CellController)
+        self.pushButton_365.setGeometry(QtCore.QRect(500, 330, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_365.setFont(font)
+        self.pushButton_365.setCheckable(True)
+        self.pushButton_365.toggle()
+        self.pushButton_365.setChecked(True)
+        self.pushButton_365.setObjectName("pushButton_365")
+
+
+        #37
+        self.pushButton_370 = QtWidgets.QPushButton(CellController)
+        self.pushButton_370.setGeometry(QtCore.QRect(590, 330, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_370.setFont(font)
+        self.pushButton_370.setCheckable(True)
+        self.pushButton_370.toggle()
+        self.pushButton_370.setChecked(True)
+        self.pushButton_370.setObjectName("pushButton_370")
+
+
+        #37.5
+        self.pushButton_375 = QtWidgets.QPushButton(CellController)
+        self.pushButton_375.setGeometry(QtCore.QRect(680, 330, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_375.setFont(font)
+        self.pushButton_375.setCheckable(True)
+        self.pushButton_375.toggle()
+        self.pushButton_375.setChecked(True)
+        self.pushButton_375.setObjectName("pushButton_375")
+
+
+        #41
+        self.pushButton_410 = QtWidgets.QPushButton(CellController)
+        self.pushButton_410.setGeometry(QtCore.QRect(590, 230, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_410.setFont(font)
+        self.pushButton_410.setCheckable(True)
+        self.pushButton_410.toggle()
+        self.pushButton_410.setChecked(True)
+        self.pushButton_410.setObjectName("pushButton_410")
+
+
+        #38
+        self.pushButton_380 = QtWidgets.QPushButton(CellController)
+        self.pushButton_380.setGeometry(QtCore.QRect(50, 230, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_380.setFont(font)
+        self.pushButton_380.setCheckable(True)
+        self.pushButton_380.toggle()
+        self.pushButton_380.setChecked(True)
+        self.pushButton_380.setObjectName("pushButton_380")
+
+        #40
+        self.pushButton_400 = QtWidgets.QPushButton(CellController)
+        self.pushButton_400.setGeometry(QtCore.QRect(410, 230, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_400.setFont(font)
+        self.pushButton_400.setCheckable(True)
+        self.pushButton_400.toggle()
+        self.pushButton_400.setChecked(True)
+        self.pushButton_400.setObjectName("pushButton_400")
+
+
+        #38.5
+        self.pushButton_385 = QtWidgets.QPushButton(CellController)
+        self.pushButton_385.setGeometry(QtCore.QRect(140, 230, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_385.setFont(font)
+        self.pushButton_385.setCheckable(True)
+        self.pushButton_385.toggle()
+        self.pushButton_385.setChecked(True)
+        self.pushButton_385.setObjectName("pushButton_385")
+
+
+        #41.5
+        self.pushButton_415 = QtWidgets.QPushButton(CellController)
+        self.pushButton_415.setGeometry(QtCore.QRect(680, 230, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_415.setFont(font)
+        self.pushButton_415.setCheckable(True)
+        self.pushButton_415.toggle()
+        self.pushButton_415.setChecked(True)
+        self.pushButton_415.setObjectName("pushButton_415")
+
+
+        #40.5
+        self.pushButton_405 = QtWidgets.QPushButton(CellController)
+        self.pushButton_405.setGeometry(QtCore.QRect(500, 230, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_405.setFont(font)
+        self.pushButton_405.setCheckable(True)
+        self.pushButton_405.toggle()
+        self.pushButton_405.setChecked(True)
+        self.pushButton_405.setObjectName("pushButton_405")
+
+
+        #39
+        self.pushButton_390 = QtWidgets.QPushButton(CellController)
+        self.pushButton_390.setGeometry(QtCore.QRect(230, 230, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_390.setFont(font)
+        self.pushButton_390.setCheckable(True)
+        self.pushButton_390.toggle()
+        self.pushButton_390.setChecked(True)
+        self.pushButton_390.setObjectName("pushButton_390")
+
+
+        #39.5
+        self.pushButton_395 = QtWidgets.QPushButton(CellController)
+        self.pushButton_395.setGeometry(QtCore.QRect(320, 230, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_395.setFont(font)
+        self.pushButton_395.setCheckable(True)
+        self.pushButton_395.toggle()
+        self.pushButton_395.setChecked(True)
+        self.pushButton_395.setObjectName("pushButton_395")
+
+
+        #45.5
+        self.pushButton_455 = QtWidgets.QPushButton(CellController)
+        self.pushButton_455.setGeometry(QtCore.QRect(680, 130, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_455.setFont(font)
+        self.pushButton_455.setCheckable(True)
+        self.pushButton_455.toggle()
+        self.pushButton_455.setChecked(True)
+        self.pushButton_455.setObjectName("pushButton_455")
+
+
+        #43.5
+        self.pushButton_435 = QtWidgets.QPushButton(CellController)
+        self.pushButton_435.setGeometry(QtCore.QRect(320, 130, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_435.setFont(font)
+        self.pushButton_435.setCheckable(True)
+        self.pushButton_435.toggle()
+        self.pushButton_435.setChecked(True)
+        self.pushButton_435.setObjectName("pushButton_435")
+
+
+        #42
+        self.pushButton_420 = QtWidgets.QPushButton(CellController)
+        self.pushButton_420.setGeometry(QtCore.QRect(50, 130, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_420.setFont(font)
+        self.pushButton_420.setCheckable(True)
+        self.pushButton_420.toggle()
+        self.pushButton_420.setChecked(True)
+        self.pushButton_420.setObjectName("pushButton_420")
+
+
+        #43
+        self.pushButton_430 = QtWidgets.QPushButton(CellController)
+        self.pushButton_430.setGeometry(QtCore.QRect(230, 130, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_430.setFont(font)
+        self.pushButton_430.setCheckable(True)
+        self.pushButton_430.toggle()
+        self.pushButton_430.setChecked(True)
+        self.pushButton_430.setObjectName("pushButton_430")
+
+
+        #44.5
+        self.pushButton_445 = QtWidgets.QPushButton(CellController)
+        self.pushButton_445.setGeometry(QtCore.QRect(500, 130, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_445.setFont(font)
+        self.pushButton_445.setCheckable(True)
+        self.pushButton_445.toggle()
+        self.pushButton_445.setChecked(True)
+        self.pushButton_445.setObjectName("pushButton_445")
+
+
+        #42.5
+        self.pushButton_425 = QtWidgets.QPushButton(CellController)
+        self.pushButton_425.setGeometry(QtCore.QRect(140, 130, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_425.setFont(font)
+        self.pushButton_425.setCheckable(True)
+        self.pushButton_425.toggle()
+        self.pushButton_425.setChecked(True)
+        self.pushButton_425.setObjectName("pushButton_425")
+
+
+        #45
+        self.pushButton_450 = QtWidgets.QPushButton(CellController)
+        self.pushButton_450.setGeometry(QtCore.QRect(590, 130, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_450.setFont(font)
+        self.pushButton_450.setCheckable(True)
+        self.pushButton_450.toggle()
+        self.pushButton_450.setChecked(True)
+        self.pushButton_450.setObjectName("pushButton_450")
+
+
+        #44
+        self.pushButton_440 = QtWidgets.QPushButton(CellController)
+        self.pushButton_440.setGeometry(QtCore.QRect(410, 130, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_440.setFont(font)
+        self.pushButton_440.setCheckable(True)
+        self.pushButton_440.toggle()
+        self.pushButton_440.setChecked(True)
+        self.pushButton_440.setObjectName("pushButton_440")
+
+
+        #49.5
+        self.pushButton_495 = QtWidgets.QPushButton(CellController)
+        self.pushButton_495.setGeometry(QtCore.QRect(680, 30, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_495.setFont(font)
+        self.pushButton_495.setCheckable(True)
+        self.pushButton_495.toggle()
+        self.pushButton_495.setChecked(True)
+        self.pushButton_495.setObjectName("pushButton_495")
+
+
+        #46
+        self.pushButton_460 = QtWidgets.QPushButton(CellController)
+        self.pushButton_460.setGeometry(QtCore.QRect(50, 30, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_460.setFont(font)
+        self.pushButton_460.setCheckable(True)
+        self.pushButton_460.toggle()
+        self.pushButton_460.setChecked(True)
+        self.pushButton_460.setObjectName("pushButton_460")
+
+
+        #49
+        self.pushButton_490 = QtWidgets.QPushButton(CellController)
+        self.pushButton_490.setGeometry(QtCore.QRect(590, 30, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_490.setFont(font)
+        self.pushButton_490.setCheckable(True)
+        self.pushButton_490.toggle()
+        self.pushButton_490.setChecked(True)
+        self.pushButton_490.setObjectName("pushButton_490")
+
+
+        #47.5
+        self.pushButton_475 = QtWidgets.QPushButton(CellController)
+        self.pushButton_475.setGeometry(QtCore.QRect(320, 30, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_475.setFont(font)
+        self.pushButton_475.setCheckable(True)
+        self.pushButton_475.toggle()
+        self.pushButton_475.setChecked(True)
+        self.pushButton_475.setObjectName("pushButton_475")
+
+
+        #46.5
+        self.pushButton_465 = QtWidgets.QPushButton(CellController)
+        self.pushButton_465.setGeometry(QtCore.QRect(140, 30, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_465.setFont(font)
+        self.pushButton_465.setCheckable(True)
+        self.pushButton_465.toggle()
+        self.pushButton_465.setChecked(True)
+        self.pushButton_465.setObjectName("pushButton_465")
+
+
+        #47
+        self.pushButton_470 = QtWidgets.QPushButton(CellController)
+        self.pushButton_470.setGeometry(QtCore.QRect(230, 30, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_470.setFont(font)
+        self.pushButton_470.setCheckable(True)
+        self.pushButton_470.toggle()
+        self.pushButton_470.setChecked(True)
+        self.pushButton_470.setObjectName("pushButton_470")
+
+
+
+        #48.5
+        self.pushButton_485 = QtWidgets.QPushButton(CellController)
+        self.pushButton_485.setGeometry(QtCore.QRect(500, 30, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_485.setFont(font)
+        self.pushButton_485.setCheckable(True)
+        self.pushButton_485.toggle()
+        self.pushButton_485.setChecked(True)
+        self.pushButton_485.setObjectName("pushButton_485")
+
+
+        #48
+        self.pushButton_480 = QtWidgets.QPushButton(CellController)
+        self.pushButton_480.setGeometry(QtCore.QRect(410, 30, 80, 80))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_480.setFont(font)
+        self.pushButton_480.setCheckable(True)
+        self.pushButton_480.toggle()
+        self.pushButton_480.setChecked(True)
+        self.pushButton_480.setObjectName("pushButton_480")
+
+
+        #Text Browser
+        self.textBrowser = QtWidgets.QTextBrowser(CellController)
+        self.textBrowser.setGeometry(QtCore.QRect(229, 445, 380, 65))
+        self.textBrowser.setMinimumSize(QtCore.QSize(380, 65))
+        self.textBrowser.setMaximumSize(QtCore.QSize(380, 65))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setWeight(75)
+        self.textBrowser.setFont(font)
+        self.textBrowser.setObjectName("textBrowser")
+        self.textBrowser.append('               Click Cells to Turn ON/OFF \n Cells in Aqua are ON and Cells in Gray are OFF')
+
+
+
+        # Signals && Slots
+        self.retranslateUi(CellController)
+        self.pushButton_340.clicked.connect(self.pushButton_340_state)
+        self.pushButton_345.clicked.connect(self.pushButton_345_state)
+        self.pushButton_350.clicked.connect(self.pushButton_350_state)
+        self.pushButton_355.clicked.connect(self.pushButton_355_state)
+        self.pushButton_360.clicked.connect(self.pushButton_360_state)
+        self.pushButton_365.clicked.connect(self.pushButton_365_state)
+        self.pushButton_370.clicked.connect(self.pushButton_370_state)
+        self.pushButton_375.clicked.connect(self.pushButton_375_state)
+        self.pushButton_385.clicked.connect(self.pushButton_385_state)
+        self.pushButton_380.clicked.connect(self.pushButton_380_state)
+        self.pushButton_390.clicked.connect(self.pushButton_390_state)
+        self.pushButton_395.clicked.connect(self.pushButton_395_state)
+        self.pushButton_400.clicked.connect(self.pushButton_400_state)
+        self.pushButton_405.clicked.connect(self.pushButton_405_state)
+        self.pushButton_410.clicked.connect(self.pushButton_410_state)
+        self.pushButton_415.clicked.connect(self.pushButton_415_state)
+        self.pushButton_435.clicked.connect(self.pushButton_435_state)
+        self.pushButton_420.clicked.connect(self.pushButton_420_state)
+        self.pushButton_425.clicked.connect(self.pushButton_425_state)
+        self.pushButton_430.clicked.connect(self.pushButton_430_state)
+        self.pushButton_440.clicked.connect(self.pushButton_440_state)
+        self.pushButton_445.clicked.connect(self.pushButton_445_state)
+        self.pushButton_450.clicked.connect(self.pushButton_450_state)
+        self.pushButton_455.clicked.connect(self.pushButton_455_state)
+        self.pushButton_460.clicked.connect(self.pushButton_460_state)
+        self.pushButton_465.clicked.connect(self.pushButton_465_state)
+        self.pushButton_470.clicked.connect(self.pushButton_470_state)
+        self.pushButton_475.clicked.connect(self.pushButton_475_state)
+        self.pushButton_480.clicked.connect(self.pushButton_480_state)
+        self.pushButton_490.clicked.connect(self.pushButton_490_state)
+        self.pushButton_485.clicked.connect(self.pushButton_485_state)
+        self.pushButton_495.clicked.connect(self.pushButton_495_state)
+        QtCore.QMetaObject.connectSlotsByName(CellController)
+
+    def retranslateUi(self, CellController):
+        _translate = QtCore.QCoreApplication.translate
+        CellController.setWindowTitle(_translate("CellController", "Dialog"))
+        self.pushButton_340.setText(_translate("CellController", "34"))
+        self.pushButton_345.setText(_translate("CellController", "34.5"))
+        self.pushButton_350.setText(_translate("CellController", "35"))
+        self.pushButton_355.setText(_translate("CellController", "35.5"))
+        self.pushButton_360.setText(_translate("CellController", "36"))
+        self.pushButton_365.setText(_translate("CellController", "36.5"))
+        self.pushButton_370.setText(_translate("CellController", "37"))
+        self.pushButton_375.setText(_translate("CellController", "37.5"))
+        self.pushButton_410.setText(_translate("CellController", "41"))
+        self.pushButton_380.setText(_translate("CellController", "38"))
+        self.pushButton_400.setText(_translate("CellController", "40"))
+        self.pushButton_385.setText(_translate("CellController", "38.5"))
+        self.pushButton_415.setText(_translate("CellController", "41.5"))
+        self.pushButton_405.setText(_translate("CellController", "40.5"))
+        self.pushButton_390.setText(_translate("CellController", "39"))
+        self.pushButton_395.setText(_translate("CellController", "39.5"))
+        self.pushButton_455.setText(_translate("CellController", "45.5"))
+        self.pushButton_435.setText(_translate("CellController", "43.5"))
+        self.pushButton_420.setText(_translate("CellController", "42"))
+        self.pushButton_430.setText(_translate("CellController", "43"))
+        self.pushButton_445.setText(_translate("CellController", "44.5"))
+        self.pushButton_425.setText(_translate("CellController", "42.5"))
+        self.pushButton_450.setText(_translate("CellController", "45"))
+        self.pushButton_440.setText(_translate("CellController", "44"))
+        self.pushButton_495.setText(_translate("CellController", "49.5"))
+        self.pushButton_460.setText(_translate("CellController", "46"))
+        self.pushButton_490.setText(_translate("CellController", "49"))
+        self.pushButton_475.setText(_translate("CellController", "47.5"))
+        self.pushButton_465.setText(_translate("CellController", "46.5"))
+        self.pushButton_470.setText(_translate("CellController", "47"))
+        self.pushButton_485.setText(_translate("CellController", "48.5"))
+        self.pushButton_480.setText(_translate("CellController", "48"))
+
+
+
+    # Functions of Push Button State
+
+    def pushButton_340_state(self):
+        if self.pushButton_340.isChecked():
+            self.textBrowser.append ("The Cell of 34 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'A')
+        else:
+            self.textBrowser.append ("The Cell of 34 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'a')
+
+    def pushButton_345_state(self):
+        if self.pushButton_345.isChecked():
+            self.textBrowser.append ("The Cell of 34.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'B')
+        else:
+            self.textBrowser.append ("The Cell of 34.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'b')
+
+    def pushButton_350_state(self):
+        if self.pushButton_350.isChecked():
+            self.textBrowser.append ("The Cell of 35 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'C')
+        else:
+            self.textBrowser.append ("The Cell of 35 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'c')
+
+
+    def pushButton_355_state(self):
+        if self.pushButton_355.isChecked():
+            self.textBrowser.append ("The Cell of 35.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'D')
+        else:
+            self.textBrowser.append ("The Cell of 35.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'd')
+
+
+    def pushButton_360_state(self):
+        if self.pushButton_360.isChecked():
+            self.textBrowser.append ("The Cell of 36 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'E')
+        else:
+            self.textBrowser.append ("The Cell of 36 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'e')
+
+
+    def pushButton_365_state(self):
+        if self.pushButton_365.isChecked():
+            self.textBrowser.append ("The Cell of 36.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'F')
+        else:
+            self.textBrowser.append ("The Cell of 36.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'f')
+
+
+    def pushButton_370_state(self):
+        if self.pushButton_370.isChecked():
+            self.textBrowser.append ("The Cell of 37 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'G')
+        else:
+            self.textBrowser.append ("The Cell of 37 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'g')
+
+
+    def pushButton_375_state(self):
+        if self.pushButton_375.isChecked():
+            self.textBrowser.append ("The Cell of 37.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'H')
+        else:
+            self.textBrowser.append ("The Cell of 37.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'h')
+
+        
+    def pushButton_380_state(self):
+        if self.pushButton_380.isChecked():
+            self.textBrowser.append ("The Cell of 38 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'I')
+        else:
+            self.textBrowser.append ("The Cell of 38 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'i')
+
+
+    def pushButton_385_state(self):
+        if self.pushButton_385.isChecked():
+            self.textBrowser.append ("The Cell of 38.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'J')
+        else:
+            self.textBrowser.append ("The Cell of 38.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'j')
+
+    def pushButton_390_state(self):
+        if self.pushButton_390.isChecked():
+            self.textBrowser.append ("The Cell of 39 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'K')
+        else:
+            self.textBrowser.append ("The Cell of 39 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'k')
+
+
+    def pushButton_395_state(self):
+        if self.pushButton_395.isChecked():
+            self.textBrowser.append ("The Cell of 39.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'L')
+        else:
+            self.textBrowser.append ("The Cell of 39.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'l')   
+
+
+    def pushButton_400_state(self):
+        if self.pushButton_400.isChecked():
+            self.textBrowser.append ("The Cell of 40 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'M')
+        else:
+            self.textBrowser.append ("The Cell of 40 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'm')   
+
+
+
+    def pushButton_405_state(self):
+        if self.pushButton_405.isChecked():
+            self.textBrowser.append ("The Cell of 40.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'N')
+        else:
+            self.textBrowser.append ("The Cell of 40.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'n')   
+
+
+    def pushButton_410_state(self):
+        if self.pushButton_410.isChecked():
+            self.textBrowser.append ("The Cell of 41 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'O')
+        else:
+            self.textBrowser.append ("The Cell of 41 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'o')   
+
+
+    def pushButton_415_state(self):
+        if self.pushButton_415.isChecked():
+            self.textBrowser.append ("The Cell of 41.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'P')
+        else:
+            self.textBrowser.append ("The Cell of 41.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'p')   
+
+
+    def pushButton_420_state(self):
+        if self.pushButton_420.isChecked():
+            self.textBrowser.append ("The Cell of 42 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'Q')
+        else:
+            self.textBrowser.append ("The Cell of 42 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'q')         
+
+
+    def pushButton_425_state(self):
+        if self.pushButton_425.isChecked():
+            self.textBrowser.append ("The Cell of 42.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'R')
+        else:
+            self.textBrowser.append ("The Cell of 42.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'r')
+
+
+    def pushButton_430_state(self):
+        if self.pushButton_430.isChecked():
+            self.textBrowser.append ("The Cell of 43 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'S')
+        else:
+            self.textBrowser.append ("The Cell of 43 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b's')
+
+
+    def pushButton_435_state(self):
+        if self.pushButton_435.isChecked():
+            self.textBrowser.append ("The Cell of 43.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'T')
+        else:
+            self.textBrowser.append ("The Cell of 43.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b't')
+
+
+
+    def pushButton_440_state(self):
+        if self.pushButton_440.isChecked():
+            self.textBrowser.append ("The Cell of 44 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'U')
+        else:
+            self.textBrowser.append ("The Cell of 44 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'u')
+
+
+    def pushButton_445_state(self):
+        if self.pushButton_445.isChecked():
+            self.textBrowser.append ("The Cell of 44.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'V')
+        else:
+            self.textBrowser.append ("The Cell of 44.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'v')
+
+
+    def pushButton_450_state(self):
+        if self.pushButton_450.isChecked():
+            self.textBrowser.append ("The Cell of 45 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'W')
+        else:
+            self.textBrowser.append ("The Cell of 45 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'w')
+
+
+    def pushButton_455_state(self):
+        if self.pushButton_455.isChecked():
+            self.textBrowser.append ("The Cell of 45.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'X')
+        else:
+            self.textBrowser.append ("The Cell of 45.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'x')
+
+
+    def pushButton_460_state(self):
+        if self.pushButton_460.isChecked():
+            self.textBrowser.append ("The Cell of 46 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'Y')
+        else:
+            self.textBrowser.append ("The Cell of 46 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'y')
+
+
+    def pushButton_465_state(self):
+        if self.pushButton_465.isChecked():
+            self.textBrowser.append ("The Cell of 46.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'Z')
+        else:
+            self.textBrowser.append ("The Cell of 46.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'z')
+
+
+    def pushButton_470_state(self):
+        if self.pushButton_470.isChecked():
+            self.textBrowser.append ("The Cell of 47 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'1')
+        else:
+            self.textBrowser.append ("The Cell of 47 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'2')
+
+
+    def pushButton_475_state(self):
+        if self.pushButton_475.isChecked():
+            self.textBrowser.append ("The Cell of 47.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'3')
+        else:
+            self.textBrowser.append ("The Cell of 47.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'4')
+
+
+    def pushButton_480_state(self):
+        if self.pushButton_480.isChecked():
+            self.textBrowser.append ("The Cell of 48 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'5')
+        else:
+            self.textBrowser.append ("The Cell of 48 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'6')
+
+    def pushButton_485_state(self):
+        if self.pushButton_485.isChecked():
+            self.textBrowser.append ("The Cell of 48.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'7')
+        else:
+            self.textBrowser.append ("The Cell of 48.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'8')
+
+
+    def pushButton_490_state(self):
+        if self.pushButton_490.isChecked():
+            self.textBrowser.append ("The Cell of 49 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'9')
+        else:
+            self.textBrowser.append ("The Cell of 49 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'0')
+
+
+    def pushButton_495_state(self):
+        if self.pushButton_495.isChecked():
+            self.textBrowser.append ("The Cell of 49.5 Hz is ON")
+            time.sleep(0.1) 
+            ser.write(b'$')
+        else:
+            self.textBrowser.append ("The Cell of 49.5 Hz is OFF")  
+            time.sleep(0.1)
+            ser.write(b'&')
+
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    CellController = QtWidgets.QDialog()
+    ui = Ui_CellController()
+    ui.setupUi(CellController)
+    CellController.show()
+    sys.exit(app.exec_())
