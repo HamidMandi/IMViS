@@ -12,7 +12,6 @@
  1. Compile the arduino sketch on a Arduino Due
  
  2. Run the .py code
-
-
+ 
 
  ______________________
